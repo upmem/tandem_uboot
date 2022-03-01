@@ -6,7 +6,6 @@
 obj-y	:= zynqmp.o
 obj-y	+= ../common/board.o
 obj-y	+= signature.o
-echo "compiling signature"
 
 ifneq ($(CONFIG_XILINX_PS_INIT_FILE),"")
 PS_INIT_FILE := $(shell cd $(srctree); readlink -f $(CONFIG_XILINX_PS_INIT_FILE))
