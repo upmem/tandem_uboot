@@ -121,7 +121,7 @@ SECTIONS
 	. = ALIGN(8);
 
 	_sig = .;
-	.signature : {
+	.sig : {
 		singature.o (.*);
 	}
 
