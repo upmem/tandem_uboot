@@ -120,13 +120,6 @@ SECTIONS
 
 	. = ALIGN(8);
 
-	_sig = .;
-	.sig : {
-		singature.o (.*);
-	}
-
-	. = ALIGN(8);
-
 	.image_copy_end :
 	{
 		*(.__image_copy_end)
