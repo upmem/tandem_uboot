@@ -339,7 +339,7 @@ int board_init(void)
 {
 	printf("EL Level:\tEL%d\n", current_el());
 	printf("signature: \n");
-	for (i =0; i< sizeof(signature_data)/sizeof(int); i++) {
+	for (int i =0; i< sizeof(signature_data)/sizeof(int); i++) {
 		printf("%lx\n", signature_data[i]);
 	}
 
