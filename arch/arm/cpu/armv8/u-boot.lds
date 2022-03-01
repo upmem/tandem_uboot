@@ -141,12 +141,12 @@ SECTIONS
 		*(.__rel_dyn_end)
 	}
 
-
+	_sigstart = .;
 	.sig :
 	{
 		*(.sig)
 	}
-
+	_sigend = .;
 	_end = .;
 
 	. = ALIGN(8);
