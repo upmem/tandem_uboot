@@ -1450,6 +1450,9 @@ quiet_cmd_u-boot-elf ?= LD      $@
 	--defsym=$(PLATFORM_ELFENTRY)=$(CONFIG_SYS_TEXT_BASE) \
 	-Ttext=$(CONFIG_SYS_TEXT_BASE)
 u-boot.elf: u-boot.bin
+#TODO calculate the padding to reach 4 bytes boundary
+	dd if=/dev/zero of=$< bs=1 count=1 conv=notrunc oflag=append
+	dd if=../git/signature.bin of=$< bs=16 conv=notrunc oflag=append
 	$(Q)$(OBJCOPY) -I binary $(PLATFORM_ELFFLAGS) $< u-boot-elf.o
 	$(call if_changed,u-boot-elf)
 

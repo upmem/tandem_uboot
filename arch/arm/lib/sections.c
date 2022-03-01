@@ -33,3 +33,4 @@ char __efi_runtime_stop[0] __attribute__((section(".__efi_runtime_stop")));
 char __efi_runtime_rel_start[0] __attribute__((section(".__efi_runtime_rel_start")));
 char __efi_runtime_rel_stop[0] __attribute__((section(".__efi_runtime_rel_stop")));
 char _end[0] __attribute__((section(".__end")));
+//char _sig_start[0] __attribute__((section("._my_sig_data")));
