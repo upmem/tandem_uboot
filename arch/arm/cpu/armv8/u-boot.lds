@@ -120,11 +120,10 @@ SECTIONS
 
 	. = ALIGN(8);
 
-	_signature_start = .;
+	_sig = .;
 	.signature : {
 		singature.o (.*);
 	}
-	_signature_end = .;
 
 	. = ALIGN(8);
 
