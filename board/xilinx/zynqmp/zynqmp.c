@@ -22,7 +22,7 @@
 #include <dwc3-uboot.h>
 #include <zynqmppl.h>
 #include <g_dnl.h>
-
+//#include "signature.h"
 DECLARE_GLOBAL_DATA_PTR;
 
 #if !defined(CONFIG_SPL_BUILD) && defined(CONFIG_WDT)
@@ -338,6 +338,12 @@ int board_early_init_f(void)
 int board_init(void)
 {
 	printf("EL Level:\tEL%d\n", current_el());
+/*
+	printf("signature addr 0x%lx: \n", signature_data);
+	for (int i =0; i< sizeof(signature_data)/sizeof(uint32_t); i++) {
+		printf("%x\n", *(uint32_t*)&signature_data[i*4]);
+	}
+*/
 
 #if defined(CONFIG_FPGA) && defined(CONFIG_FPGA_ZYNQMPPL) && \
     !defined(CONFIG_SPL_BUILD) || (defined(CONFIG_SPL_FPGA_SUPPORT) && \
