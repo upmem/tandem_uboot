@@ -5,7 +5,6 @@
 
 obj-y	:= board.o
 obj-y	+= ../common/board.o
-obj-y	+= signature.o
 
 
 ifneq ($(CONFIG_XILINX_PS_INIT_FILE),"")
