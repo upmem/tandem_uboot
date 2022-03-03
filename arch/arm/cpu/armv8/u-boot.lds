@@ -102,6 +102,14 @@ SECTIONS
 
 	. = ALIGN(8);
 
+	.__sig :
+	{
+		*(.__sig)
+		*(.__sig*)
+	}
+
+	. = ALIGN(8);
+
 	. = .;
 
 	. = ALIGN(8);
@@ -139,12 +147,6 @@ SECTIONS
 	.rel_dyn_end :
 	{
 		*(.__rel_dyn_end)
-	}
-
-	.__sig :
-	{
-		*(.__sig)
-		*(.__sig*)
 	}
 
 	_end = .;
