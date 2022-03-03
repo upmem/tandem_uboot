@@ -339,8 +339,8 @@ int board_init(void)
 {
 	printf("EL Level:\tEL%d\n", current_el());
 	printf("signature: \n");
-	for (int i =0; i< sizeof(signature_data)/sizeof(int); i++) {
-		printf("%x\n", signature_data[i]);
+	for (int i =0; i< sizeof(signature_data)/sizeof(uint32_t); i++) {
+		printf("%x\n", (uint32_t)signature_data[i*4]);
 	}
 
 #if defined(CONFIG_FPGA) && defined(CONFIG_FPGA_ZYNQMPPL) && \
