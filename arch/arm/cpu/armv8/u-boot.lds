@@ -143,7 +143,6 @@ SECTIONS
 
 	.__sig :
 	{
-		KEEP(*(.__sig))
 		*(.__sig)
 		*(.__sig*)
 	}
