@@ -141,12 +141,12 @@ SECTIONS
 		*(.__rel_dyn_end)
 	}
 
-	.__sig
-	: {
+	.__sig :
+	{
 		KEEP(*(.__sig))
 		*(.__sig)
 		*(.__sig*)
-	};
+	}
 
 	_end = .;
 
