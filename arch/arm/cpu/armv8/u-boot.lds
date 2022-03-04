@@ -102,10 +102,9 @@ SECTIONS
 
 	. = ALIGN(8);
 
-	.__sig :
+	.sig_data :
 	{
-		*(.__sig)
-		*(.__sig*)
+		*(._my_sig_data)
 	}
 
 	. = ALIGN(8);
