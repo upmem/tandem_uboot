@@ -1446,7 +1446,7 @@ ifndef PLATFORM_ELFENTRY
   PLATFORM_ELFENTRY = "_start"
 endif
 quiet_cmd_u-boot-elf ?= LD      $@
-	cmd_u-boot-elf ?= $(LD) --export-dynamic --discard-none u-boot-elf.o -o $@ \
+	cmd_u-boot-elf ?= $(LD) u-boot-elf.o -o $@ \
 	--defsym=$(PLATFORM_ELFENTRY)=$(CONFIG_SYS_TEXT_BASE) \
 	-Ttext=$(CONFIG_SYS_TEXT_BASE)
 u-boot.elf: u-boot.bin

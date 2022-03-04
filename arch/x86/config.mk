@@ -37,7 +37,7 @@ PLATFORM_LDFLAGS += -m $(if $(IS_32BIT),elf_i386,elf_x86_64)
 LDFLAGS_EFI_PAYLOAD := -Bsymbolic -Bsymbolic-functions -shared --no-undefined -s
 
 OBJCOPYFLAGS_EFI := -j .text -j .sdata -j .data -j .dynamic -j .dynsym \
-	-j .rel -j .rela -j .reloc
+	-j .rel -j .rela -j .reloc 
 
 ifeq ($(IS_32BIT),y)
 CFLAGS_NON_EFI := -mregparm=3

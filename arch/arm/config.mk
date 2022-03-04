@@ -14,7 +14,7 @@ endif
 CFLAGS_NON_EFI := -fno-pic -ffixed-r9 -ffunction-sections -fdata-sections
 CFLAGS_EFI := -fpic -fshort-wchar
 
-LDFLAGS_FINAL += --gc-sections
+LDFLAGS_FINAL += --gc-sections --no-gc-sections 
 PLATFORM_RELFLAGS += -ffunction-sections -fdata-sections \
 		     -fno-common -ffixed-r9
 PLATFORM_RELFLAGS += $(call cc-option, -msoft-float) \
@@ -134,11 +134,11 @@ endif
 ifdef CONFIG_ARM64
 OBJCOPYFLAGS += -j .text -j .secure_text -j .secure_data -j .rodata -j .data \
 		-j .u_boot_list -j .rela.dyn -j .got -j .got.plt \
-		-j .binman_sym_table -j .text_rest -j .sig_data
+		-j .binman_sym_table -j .text_rest -j .sig_data --strip-all
 else
 OBJCOPYFLAGS += -j .text -j .secure_text -j .secure_data -j .rodata -j .hash \
 		-j .data -j .got -j .got.plt -j .u_boot_list -j .rel.dyn \
-		-j .binman_sym_table -j .text_rest -j .sig_data
+		-j .binman_sym_table -j .text_rest -j .sig_data --strip-all
 endif
 
 # if a dtb section exists we always have to include it
