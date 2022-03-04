@@ -100,6 +100,7 @@ SECTIONS
 
 	.sig_data :
 	{
+		_sig_start = .;
 		*(._my_sig_data)
 	}
 
