@@ -24,6 +24,9 @@ SECTIONS
 	_text_size = . - _text;
 	.dynamic  : { *(.dynamic) }
 	.data : {
+		_sig_start = .;
+		*(._my_sig_data)
+		_sig_end = .;
 		_data = .;
 		*(.sdata)
 		*(.data)
