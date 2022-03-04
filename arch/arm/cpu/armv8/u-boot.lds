@@ -92,16 +92,16 @@ SECTIONS
 	}
 #endif
 
+
+	. = ALIGN(8);
+	.rodata : { *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.rodata*))) }
+
 	. = ALIGN(8);
 
 	.sig_data :
 	{
 		*(._my_sig_data)
 	}
-
-
-	. = ALIGN(8);
-	.rodata : { *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.rodata*))) }
 
 	. = ALIGN(8);
 	.data : {
