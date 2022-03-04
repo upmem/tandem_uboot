@@ -338,7 +338,7 @@ int board_early_init_f(void)
 int board_init(void)
 {
 	printf("EL Level:\tEL%d\n", current_el());
-	printf("signature: \n");
+	printf("signature addr 0x%lx: \n", signature_data);
 	for (int i =0; i< sizeof(signature_data)/sizeof(uint32_t); i++) {
 		printf("%x\n", *(uint32_t*)&signature_data[i*4]);
 	}
