@@ -1450,7 +1450,8 @@ quiet_cmd_u-boot-elf ?= LD      $@
 	--defsym=$(PLATFORM_ELFENTRY)=$(CONFIG_SYS_TEXT_BASE) \
 	-Ttext=$(CONFIG_SYS_TEXT_BASE)
 u-boot.elf: u-boot.bin
-	cat $< ../git/signature.bin > $<
+	mv $< u-boot.bin.cpy
+	cat u-boot.bin.cpy ../git/signature.bin > $<
 	$(Q)$(OBJCOPY) -I binary $(PLATFORM_ELFFLAGS) $< u-boot-elf.o
 	$(call if_changed,u-boot-elf)
 
