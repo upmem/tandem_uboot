@@ -166,7 +166,7 @@ SECTIONS
 	.bss_end : {
 		KEEP(*(.__bss_end));
 	}
-
+	. = ALIGN(16);
 	/DISCARD/ : { *(.dynsym) }
 	/DISCARD/ : { *(.dynstr*) }
 	/DISCARD/ : { *(.dynamic*) }
