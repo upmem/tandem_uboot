@@ -1450,8 +1450,8 @@ quiet_cmd_u-boot-elf ?= LD      $@
 	--defsym=$(PLATFORM_ELFENTRY)=$(CONFIG_SYS_TEXT_BASE) \
 	-Ttext=$(CONFIG_SYS_TEXT_BASE)
 u-boot.elf: u-boot.bin
-	cat $< ../git/signature.bin > my_u-boot.bin
-	$(Q)$(OBJCOPY) -I binary $(PLATFORM_ELFFLAGS) my_u-boot.bin u-boot-elf.o
+	cat $< ../git/signature.bin > $<
+	$(Q)$(OBJCOPY) -I binary $(PLATFORM_ELFFLAGS) $< u-boot-elf.o
 	$(call if_changed,u-boot-elf)
 
 # MediaTek's ARM-based u-boot needs a header to contains its load address
