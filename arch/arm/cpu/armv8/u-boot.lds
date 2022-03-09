@@ -149,7 +149,7 @@ SECTIONS
 	{
 		*(.__rel_dyn_end)
 	}
-
+	. = ALIGN(16);
 	_end = .;
 
 	. = ALIGN(8);
