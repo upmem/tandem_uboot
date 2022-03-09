@@ -97,6 +97,7 @@ SECTIONS
 	.rodata : { *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.rodata*))) }
 
 	. = ALIGN(8);
+
 /*
 	.sig_data :
 	{
@@ -148,12 +149,9 @@ SECTIONS
 	.rel_dyn_end :
 	{
 		*(.__rel_dyn_end)
-	. = ALIGN(16);
-
 	}
-	. = ALIGN(16);
+
 	_end = .;
-	. = ALIGN(16);
 
 	. = ALIGN(8);
 
@@ -165,14 +163,11 @@ SECTIONS
 		*(.bss*)
 		 . = ALIGN(8);
 	}
-	. = ALIGN(16);
 
 	.bss_end : {
 		KEEP(*(.__bss_end));
-		. = ALIGN(16);
-
 	}
-	. = ALIGN(16);
+
 	/DISCARD/ : { *(.dynsym) }
 	/DISCARD/ : { *(.dynstr*) }
 	/DISCARD/ : { *(.dynamic*) }
