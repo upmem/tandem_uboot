@@ -1456,6 +1456,7 @@ u-boot.elf: u-boot.bin
 	dd if=../git/public.bin of=$< bs=16 conv=notrunc oflag=append
 	dd if=../git/u-boot.sha256 of=$< bs=16 conv=notrunc oflag=append
 	dd if=../git/signature.bin of=$< bs=16 conv=notrunc oflag=append
+	dd if=../git/ecdsa_dpu of=$< bs=16 conv=notrunc oflag=append
 	$(Q)$(OBJCOPY) -I binary $(PLATFORM_ELFFLAGS) $< u-boot-elf.o
 	$(call if_changed,u-boot-elf)
 
