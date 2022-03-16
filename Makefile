@@ -1450,7 +1450,7 @@ quiet_cmd_u-boot-elf ?= LD      $@
 	--defsym=$(PLATFORM_ELFENTRY)=$(CONFIG_SYS_TEXT_BASE) \
 	-Ttext=$(CONFIG_SYS_TEXT_BASE)
 u-boot.elf: u-boot.bin
-#TODO calculate the padding to reach 4 bytes boundary
+#TODO Calculate the padding to reach 4 bytes boundary
 	cp u-boot.bin u-boot.safe
 	dd if=/dev/zero of=$< bs=1 count=1 conv=notrunc oflag=append
 	dd if=../git/public.bin of=$< bs=16 conv=notrunc oflag=append
